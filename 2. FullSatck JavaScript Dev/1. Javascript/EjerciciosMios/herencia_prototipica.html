@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herencia prototipica</title>
+</head>
+
+<body>
+  <script>
+    function Motos(nombre, maxVelocidad) {
+      this.nombre = nombre,
+        this.maxVelocidad = maxVelocidad
+    }
+    Motos.prototype.andar = function () {
+      console.log(`Anda la moto ${this.nombre}`)
+    }
+    Motos.prototype.movimiento = function () {
+      console.log(`Va hacia delante a una velocidad de ${this.maxVelocidad}`)
+    }
+
+    const yamaha = new Motos("RTX", "200km/h"),
+      DT = new Motos("150", "250km/h")
+
+    /*  console.log(yamaha)
+     console.log(DT)
+     yamaha.andar()
+     yamaha.movimiento()
+     DT.andar()
+     DT.movimiento() */
+
+    function MotoCasa(nombre, maxVelocidad, utilidad) {
+      this.super = Motos,
+        this.super(nombre, maxVelocidad),
+        this.utilidad = utilidad
+    }
+    //Heredando de Motos
+    MotoCasa.prototype = new Motos()
+    //Creando e inicializando MotoCasa (hijo) apartir de Motos (padre)
+    MotoCasa.prototype.constructor = MotoCasa
+
+    MotoCasa.prototype.lugar = function () {
+      console.log("Estoy en la casa")
+    }
+
+    MotoCasa.prototype.movimiento = function () {
+      console.log(`Voy hacia mi casa a una velocidad de ${this.maxVelocidad}`)
+
+    }
+
+    const eco = new MotoCasa("Azul", "150km/h", "trabajo"),
+      honda = new MotoCasa("Negra", "160km/h", "pueblo")
+
+    console.log(eco)
+    console.log(honda)
+
+    eco.movimiento()
+    yamaha.movimiento()
+
+
+
+
+  </script>
+</body>
+
+</html>

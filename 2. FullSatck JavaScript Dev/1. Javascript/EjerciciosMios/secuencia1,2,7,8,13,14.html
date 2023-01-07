@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios</title>
+</head>
+
+<body>
+  <script>
+
+
+    let num = 1
+    let opcion = 6
+
+    if (opcion == 1 || opcion == 2) {
+      if (opcion == 1) {
+        console.log(`${num}.`)
+      } else {
+        console.log(`${num},`)
+        num += 1
+        console.log(`${num}.`)
+      }
+    } else {
+      console.log(`${num},`)
+      for (let num = 1; num <= opcion && num != opcion;) {
+        num += 1
+        if ((num + 5) > opcion) {
+          console.log(`${num}.`)
+        } else {
+          if ((num + 5) == opcion) {
+            console.log(`${num},`)
+            console.log((num + 5) + ".")
+          } else {
+            console.log(`${num},`)
+          }
+        }
+        if (num > (opcion - 1)) {
+        } else {
+          num += 5
+        }
+        if (opcion > num) {
+          console.log(`${num},`)
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asincronia en JavaScript</title>
+</head>
+
+<body>
+  <h1>Asincronia en JavaScript</h1>
+  <script>
+
+    //Video 44: Temporizadores (setTimeout & setInterval)
+
+    /*   console.log("Inicio")
+      setTimeout(() => {
+        console.log("Ejecutando un setTimeout, esto se ejecuta una sola vez")
+      }, 3000);
+  
+      setInterval(() => {
+        console.log("Ejecutando un setInterval, esto se ejecuta indefinidamente cada ciertto intervalo de tiempo")
+      }, 1000); */
+
+    /* let temporizador = setTimeout(() => {
+      console.log(new Date().toLocaleTimeString())
+    }, 1000);
+
+    clearTimeout(temporizador)
+    console.log("despues del clearTimeout") */
+
+    /*  let temporizador = setInterval(() => {
+       console.log(new Date().toLocaleTimeString())
+     }, 1000);
+ 
+     clearInterval(temporizador)
+     console.log("despues del clearInterval")  */
+
+    //Video 45: Asincronía y el Event Loop
+
+    /*Procesamiento Single thread=(Una tarea a la vez) y Multi thread=(Varias tareas a la vez)
+    
+    Operaciones de CPU=(Operaciones que consumen recursos delnavegador o hasta pc) y Operaciones de Entrada y Salida=(Operaciones que entra datos y espra la salida)
+    
+    Operaciones concurrentes=(Se ejecutan simultaneamente) y paralelas=(Se ejecutan al mismo tiempo)
+    
+    Operaciones bloqueantes y no bloqueantes
+    operaciones sincronas=(pueden ser bloqeuantes o no bloqueantes) y asincronas=(no bloqueantes)
+    
+    Javascript una un modelo asincrono y no bloqueante, con un loop de evemtos implementado en un sólo hilo, (single thread) para operaciones de entradas y salida (input/output)*/
+
+    /*Código Síncrono bloqueantes*/
+    /*
+        (() => {
+          console.log("Codigo sincrono")
+          console.log("inicio")
+          function dos() {
+            console.log("Dos")
+          }
+          function uno() {
+            console.log("Uno")
+            dos()
+            console.log("Tres")
+          }
+          uno()
+          console.log("Fin")
+    
+        })()
+        console.log("**************");
+    */
+    /*Código Asíncrono no bloqueante*/
+    /*
+        (() => {
+          console.log("Codigo asincrono")
+          console.log("Inicio")
+    
+          function dos() {
+            setTimeout(function () {
+              console.log("Dos")
+            }, 1000);
+          }
+    
+          function uno() {
+            setTimeout(function () {
+              console.log("Uno")
+            }, 0);
+            dos()
+            console.log("Tres")
+          }
+    
+          uno()
+          console.log("Fin")
+        })()
+    */
+    //Video 46: Callbacks
+
+    function cuadradoCallback(value)
+
+
+  </script>
+</body>
+
+</html>

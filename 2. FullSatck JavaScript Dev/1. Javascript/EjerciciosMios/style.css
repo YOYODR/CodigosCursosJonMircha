@@ -1,0 +1,18 @@
+ h1,
+ h2 {
+   color: blue;
+   font-family: sans-serif;
+ }
+
+ html {
+   background-color: rgba(60, 61, 60, 0.157);
+   scroll-behavior: smooth;
+ }
+
+ p {
+   font-family: sans-serif;
+ }
+
+ .text-40 {
+   font-size: 40px;
+ }
